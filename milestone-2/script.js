@@ -128,11 +128,11 @@ function printSingleCrad(singleCard) {
 	const card = document.createElement('div');
 	card.className = 'mm-card';
 
-	const {name, prefix, family} = singleCard;
+	const {name, prefix, family, color} = singleCard;
 
 	card.innerHTML = 
 	`
-		<div class="card-icon">
+		<div class="card-icon ${color}">
 			<i class="${family} ${prefix}${name}"></i>
 		</div>
 		<span class="card-name">${name}</span>
