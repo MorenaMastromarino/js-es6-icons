@@ -18,31 +18,43 @@
   <title>Document</title>
 </head>
 <body>
+  
+  <header class="d-flex align-items-end">   
+    <h1 class="mb-0">FontIcons</h1> 
+  </header>
 
+  <main>
+    
+    <div class="main-bar text-center">
+      <label for="type">filtra per tipo</label>
+      <select name="type" id="type">
+        <option value="all">All</option>
+        <option value="animal">Animal</option>
+        <option value="vegetable">Vegetable</option>
+        <option value="user">User</option>
+      </select>
+    </div>
 
-  <div class="container">
-    <header class="d-flex align-items-end">
-      <h1 class="mb-0">FontIcons</h1>
-    </header>
+    <div class="main-content">
+      <div class="mm-container d-flex flex-wrap justify-content-between">
 
-    <main>
-      <div class="main-bar text-center">
-        <label for="type">filtra per tipo</label>
+        <div class="mm-card">
+          <div class="card-icon">
+            <i class="fas fa-cat"></i>
+          </div>
+          <span class="card-name">cat</span>
+        </div>        
 
-        <select name="type" id="type">
-          <option value="all">All</option>
-          <option value="animal">Animal</option>
-          <option value="vegetable">Vegetable</option>
-          <option value="user">User</option>
-        </select>
       </div>
+    </div>
 
-      <div class="main-content">
 
-      </div>
-    </main>
+  </main>
 
-  </div>
+
+
+
+
   
   <script src="script.js"></script>
 </body>
