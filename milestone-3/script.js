@@ -1,4 +1,4 @@
-const cards = [
+const icone = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -114,14 +114,43 @@ const cards = [
 ];
 
 const container = document.querySelector('.main-content');
+const select = document.getElementById('type');
+
+//array di oggetti in base al type
+const iconeAnimal = icone.filter((icona) =>	icona.type === 'animal');
+const iconeVegetable = icone.filter((icona) =>	icona.type === 'vegetable');
+const iconeUser = icone.filter((icona) =>	icona.type === 'user');
 
 
-// ciclo per stampare tutte le card
-for(let card of cards){
-	printSingleCrad(card);
+// stampo carte all'inizio e poi in base al valore selezionato
+printCards(icone);
+
+select.addEventListener('change', function(event){
+
+	if(event.target.value === 'animal'){
+		printCards(iconeAnimal);
+	}else if(event.target.value === 'vegetable'){
+		printCards(iconeVegetable);
+	}else if(event.target.value === 'user'){
+		printCards(iconeUser);
+	}else{
+		printCards(icone);
+	};
+	
+});
+
+
+
+// funzione che stampa tutte le card di un array dato
+function printCards (array){
+	container.innerHTML='';
+
+	for(let object of array){		
+		container.append(printSingleCrad(object));
+	};
+
 };
-
-
+	
 
 // funzione che stampa singola card
 function printSingleCrad(singleCard) {
@@ -137,6 +166,6 @@ function printSingleCrad(singleCard) {
 		</div>
 		<span class="card-name">${name}</span>
 	`;
-
-	container.append(card);
+	
+	return card;
 };
